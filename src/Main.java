@@ -19,7 +19,7 @@ public class Main {
                 System.out.print("Enter account %d name: ".formatted(accountNum));
                 String accName = input.nextLine();
 
-                System.out.print("Enter account %d balance: ".formatted(accountNum));
+                System.out.print("Enter account %d balance: $".formatted(accountNum));
                 double accBal = input.nextDouble();
                 input.nextLine();
 
@@ -46,14 +46,14 @@ public class Main {
                         int depoOrWith = input.nextInt();
 
                         if (depoOrWith == 1) {
-                            System.out.print("Type amount to deposit: ");
+                            System.out.print("Type amount to deposit: $");
                             double amount = input.nextDouble();
 
                             banks[0].deposit(amount);
                             break;
                         }
                         else if (depoOrWith == 2) {
-                            System.out.print("Type amount to withdraw: ");
+                            System.out.print("Type amount to withdraw: $");
                             double amount = input.nextDouble();
 
                             banks[0].withdraw(amount);
@@ -76,14 +76,14 @@ public class Main {
                         int depoOrWith2 = input.nextInt();
 
                         if (depoOrWith2 == 1) {
-                            System.out.print("Type amount to deposit: ");
+                            System.out.print("Type amount to deposit: $");
                             double amount = input.nextDouble();
 
                             banks[1].deposit(amount);
                             break;
                         }
                         else if (depoOrWith2 == 2) {
-                            System.out.print("Type amount to withdraw: ");
+                            System.out.print("Type amount to withdraw: $");
                             double amount = input.nextDouble();
 
                             banks[1].withdraw(amount);
@@ -106,14 +106,14 @@ public class Main {
                         int depoOrWith3 = input.nextInt();
 
                         if (depoOrWith3 == 1) {
-                            System.out.print("Type amount to deposit: ");
+                            System.out.print("Type amount to deposit: $");
                             double amount = input.nextDouble();
 
                             banks[2].deposit(amount);
                             break;
                         }
                         else if (depoOrWith3 == 2) {
-                            System.out.print("Type amount to withdraw: ");
+                            System.out.print("Type amount to withdraw: $");
                             double amount = input.nextDouble();
 
                             banks[2].withdraw(amount);

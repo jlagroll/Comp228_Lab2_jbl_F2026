@@ -56,7 +56,7 @@ public class BankAccount {
 
    @Override
    public String toString() {
-      return "Account Name: %s \nAccount Number: %s \nAccount Balance: %.2f".formatted(accountName, accountNumber, accountBalance);
+      return "Account Name: %s \nAccount Number: %s \nAccount Balance: $%.2f".formatted(accountName, accountNumber, accountBalance);
    }
 
 }

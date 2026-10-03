@@ -61,6 +61,7 @@ public class Main {
                         }
                         else if (depoOrWith == 3) {
                             System.out.println(banks[0]);
+                            continue;
                         }
                         else if (depoOrWith == 4) {
                             break;
@@ -90,6 +91,7 @@ public class Main {
                         }
                         else if (depoOrWith2 == 3) {
                             System.out.println(banks[1]);
+                            continue;
                         }
                         else if (depoOrWith2 == 4) {
                             break;
@@ -119,6 +121,7 @@ public class Main {
                         }
                         else if (depoOrWith3 == 3) {
                             System.out.println(banks[2]);
+                            continue;
                         }
                         else if (depoOrWith3 == 4) {
                             break;
@@ -127,6 +130,7 @@ public class Main {
                             System.out.println("Invalid input. Try again.");
                             continue;
                         }
+
                     case 4:
                         exitSwitch = true;
                         break;

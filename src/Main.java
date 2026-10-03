@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int x = 0;
+        int accountNum = 1;
 
         Boolean exitSwitch = false;
 
@@ -12,19 +13,20 @@ public class Main {
 
         while (x != 3) {
             try {
-                System.out.print("Enter account %d number: ".formatted(x));
+                System.out.print("Enter account %d number: ".formatted(accountNum));
                 String accNum = input.nextLine();
 
-                System.out.print("Enter account %d name: ".formatted(x));
+                System.out.print("Enter account %d name: ".formatted(accountNum));
                 String accName = input.nextLine();
 
-                System.out.print("Enter account %d balance: ".formatted(x));
+                System.out.print("Enter account %d balance: ".formatted(accountNum));
                 double accBal = input.nextDouble();
                 input.nextLine();
 
                 banks[x] = new BankAccount(accNum, accName, accBal);
 
                 x++;
+                accountNum++;
             }
 
             catch (IllegalArgumentException e) {
@@ -35,30 +37,32 @@ public class Main {
 
         while (true) {
             try {
-                System.out.print("Enter account id (3 to exit) [0, 1, 2, 3]");
+                System.out.print("Enter account id (4 to exit) [1, 2, 3, 4] ");
                 int choice = input.nextInt();
 
                 switch (choice) {
-                    case 0:
-                        System.out.print("Deposit, withdraw or print account info? (3 to exit) [0, 1, 2, 3]:");
+                    case 1:
+                        System.out.print("Deposit, withdraw or print account info? (4 to exit) [1, 2, 3, 4]: ");
                         int depoOrWith = input.nextInt();
 
-                        if (depoOrWith == 0) {
-                            System.out.print("Select amount to deposit: ");
+                        if (depoOrWith == 1) {
+                            System.out.print("Type amount to deposit: ");
                             double amount = input.nextDouble();
 
                             banks[0].deposit(amount);
+                            break;
                         }
-                        else if (depoOrWith == 1) {
-                            System.out.print("Select amount to withdraw: ");
+                        else if (depoOrWith == 2) {
+                            System.out.print("Type amount to withdraw: ");
                             double amount = input.nextDouble();
 
                             banks[0].withdraw(amount);
-                        }
-                        else if (depoOrWith == 2) {
-                            System.out.println(banks[0]);
+                            break;
                         }
                         else if (depoOrWith == 3) {
+                            System.out.println(banks[0]);
+                        }
+                        else if (depoOrWith == 4) {
                             break;
                         }
                         else {
@@ -66,26 +70,28 @@ public class Main {
                             break;
                         }
 
-                    case 1:
-                        System.out.print("Deposit, withdraw or print account info? (3 to exit) [0, 1, 2, 3]:");
+                    case 2:
+                        System.out.print("Deposit, withdraw or print account info? (4 to exit) [1, 2, 3, 4]: ");
                         int depoOrWith2 = input.nextInt();
 
-                        if (depoOrWith2 == 0) {
-                            System.out.print("Select amount to deposit: ");
+                        if (depoOrWith2 == 1) {
+                            System.out.print("Type amount to deposit: ");
                             double amount = input.nextDouble();
 
                             banks[1].deposit(amount);
+                            break;
                         }
-                        else if (depoOrWith2 == 1) {
-                            System.out.print("Select amount to withdraw: ");
+                        else if (depoOrWith2 == 2) {
+                            System.out.print("Type amount to withdraw: ");
                             double amount = input.nextDouble();
 
                             banks[1].withdraw(amount);
-                        }
-                        else if (depoOrWith2 == 2) {
-                            System.out.println(banks[1]);
+                            break;
                         }
                         else if (depoOrWith2 == 3) {
+                            System.out.println(banks[1]);
+                        }
+                        else if (depoOrWith2 == 4) {
                             break;
                         }
                         else {
@@ -93,33 +99,35 @@ public class Main {
                             continue;
                         }
 
-                    case 2:
-                        System.out.print("Deposit, withdraw or print account info? (3 to exit) [0, 1, 2, 3]:");
+                    case 3:
+                        System.out.print("Deposit, withdraw or print account info? (4 to exit) [1, 2, 3, 4]: ");
                         int depoOrWith3 = input.nextInt();
 
-                        if (depoOrWith3 == 0) {
-                            System.out.print("Select amount to deposit: ");
+                        if (depoOrWith3 == 1) {
+                            System.out.print("Type amount to deposit: ");
                             double amount = input.nextDouble();
 
                             banks[2].deposit(amount);
+                            break;
                         }
-                        else if (depoOrWith3 == 1) {
-                            System.out.print("Select amount to withdraw: ");
+                        else if (depoOrWith3 == 2) {
+                            System.out.print("Type amount to withdraw: ");
                             double amount = input.nextDouble();
 
                             banks[2].withdraw(amount);
-                        }
-                        else if (depoOrWith3 == 2) {
-                            System.out.println(banks[2]);
+                            break;
                         }
                         else if (depoOrWith3 == 3) {
+                            System.out.println(banks[2]);
+                        }
+                        else if (depoOrWith3 == 4) {
                             break;
                         }
                         else {
                             System.out.println("Invalid input. Try again.");
                             continue;
                         }
-                    case 3:
+                    case 4:
                         exitSwitch = true;
                         break;
 
@@ -137,8 +145,8 @@ public class Main {
                 System.out.println(e.getMessage());
             }
 
-            catch (WithdrawalGreater e) {
-                System.out.println(e.getMessage());
+            catch (WithdrawalGreater err) {
+                System.out.println(err.getMessage());
             }
 
             finally {

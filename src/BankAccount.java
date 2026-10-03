@@ -1,18 +1,12 @@
 class NegativeAmount extends Exception {
    public NegativeAmount(double amount) {
-      if (amount <= 0) {
-         System.out.println("Error");
-         System.out.println("Deposit or withdrawal amount must be greater than or not equal to 0");
-      }
+      super("Deposit or withdrawal amount must be greater than or not equal to 0");
    }
 }
 
 class WithdrawalGreater extends Exception {
    public WithdrawalGreater(double amount, double balance) {
-      if (amount > balance) {
-         System.out.println("Error");
-         System.out.println("Withdrawal is greater than account balance");
-      }
+      super("Withdrawal is greater than account balance");
    }
 }
 
@@ -62,7 +56,7 @@ public class BankAccount {
 
    @Override
    public String toString() {
-      return "Account Name: " + accountName + "\nAccount Number: " + accountNumber + "\nAccount Balance: " + accountBalance;
+      return "Account Name: %s \nAccount Number: %s \nAccount Balance: %.2f".formatted(accountName, accountNumber, accountBalance);
    }
 
 }
